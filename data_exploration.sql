@@ -1,13 +1,8 @@
 -- "Our World in Data" COVID-19 dataset analysis. Cut-off date is September 24th, 2023.
 -- Author: Aliaksei Vishniavetski
 -- Date: 24.09.2023
--- Description: This SQL file contains a set of data exploration queries for analyzing the COBID19 dataset provided by "Our World In Data". The queries provide insights and summary statistics to gain a better understanding of the data.
-
--- Dataset Information:
--- Dataset Name: [Insert Dataset Name]
--- Dataset Source: [Insert Source, if applicable]
--- Dataset Description: [Insert brief description of the dataset]
--- Dataset Columns: [List of dataset columns]
+-- Description: This SQL file contains a set of data exploration queries for analyzing the COVID-19 dataset provided by "Our World In Data". The queries provide insights and summary statistics to gain a better understanding of the data.
+-- Dataset link: https://github.com/owid/covid-19-data
 
 -------------------------------------------------- VIEWS FOR TABLEAU --------------------------------------------------
 
