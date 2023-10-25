@@ -2,13 +2,15 @@
 
 # SQL-Tableau-COVID-analysis
 > An analysis of the statistics related to COVID-19 Pandemic, using SQL for Data Exploration and Tableau for visualizing.
+> 
+> ***An interactive version of all graphs is available at my [*"Tableau Public" Portfolio*](https://public.tableau.com/app/profile/aliaksei.vishniavetski/viz/COVID19DataAnalysis_16981729659990/Dashboard1#1).***
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Navigation
 
 - [Overview](#overview)
-- []()
+- [Statistics](#statistics)
 - []()
 - []()
 - []()
@@ -16,6 +18,7 @@
 ## Overview
 
 ### Goals
+
 - To understand the scale of the pandemic.
 - To figure out which countries have been the most affected.
 - To gather other possible insights that can be extracted from the data.
@@ -32,6 +35,7 @@
 ![Cases](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/2b195af6-bd92-4862-8512-b0e16534fa42)
 
 ![Deaths](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/d410aa1e-9906-4c30-bde4-420b6aeab2fd)
+![Deaths](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/c0e7b2dc-4314-41c0-8559-bb7832c2bae3)
 
 ![map](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/9c463aba-343d-4fea-9538-4e01800c94ae)
 
