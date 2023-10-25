@@ -3,12 +3,58 @@
 # SQL-Tableau-COVID-analysis
 > An analysis of the statistics related to COVID-19 Pandemic, using SQL for Data Exploration and Tableau for visualizing.
 
-# Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Goals
+## Navigation
+
+- [Overview](#overview)
+- []()
+- []()
+- []()
+- []()
+
+## Overview
+
+### Goals
 - To understand the scale of the pandemic.
 - To figure out which countries have been the most affected.
 - To gather other possible insights that can be extracted from the data.
+
+### Dataset 
+
+- [**COVID-19 Dataset**](https://github.com/owid/covid-19-data) provided by "Our World in Data".
+- **Analyzed timeframe**: 01.03.2020 - 24.09.2023.
+
+## Statistics
+
+![global numbers](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/a24414b0-0745-4819-a94a-405485091bb2)
+
+![Cases](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/2b195af6-bd92-4862-8512-b0e16534fa42)
+
+![Deaths](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/d410aa1e-9906-4c30-bde4-420b6aeab2fd)
+
+![map](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/9c463aba-343d-4fea-9538-4e01800c94ae)
+
+![perc_pop](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/de5368bd-df14-47ff-9856-6776d7576d8f)
+
+![index](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/288716ae-aafa-4ddf-9b71-16ced3dd36e9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 ## Usage 
 The file `data_exploration.sql` contains the SQL queries for:
@@ -59,9 +105,3 @@ Example queries:
   		) AS excess_mort_cumul_abs
   FROM covidata;
   ```
-
-## Dataset 
-- [**COVID-19 Dataset**](https://github.com/owid/covid-19-data) provided by "Our World in Data".
-- **Analyzed timeframe**: 01.03.2020 - 24.09.2023.
-  
-# 
