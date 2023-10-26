@@ -1,6 +1,6 @@
 <img src="https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/84a615e7-afbe-42b5-86ec-8f370e42257b" align="right" height="70"></img>
 
-# SQL-Tableau-COVID-analysis
+# Analysing the Pandemic with SQL and Tableau
 > An analysis of the statistics related to COVID-19 Pandemic, using SQL for Data Exploration and Tableau for visualizing.
 > 
 > ***An interactive version of all graphs is available at my [*"Tableau Public" Portfolio*](https://public.tableau.com/app/profile/aliaksei.vishniavetski/viz/COVID19DataAnalysis_16981729659990/Dashboard1#1).***
