@@ -64,6 +64,6 @@
 
 The pandemic has _770 million_ people affected, with _0.9%_ mortality, and necessitated _70%_ of the World's population to vaccinate themselves.
 
-_The US and China_ are the leading countries both in terms of the _amount of cases and deaths_ and European countries, notably _France and Italy_, rank highest in terms of _the percentage_ of the population who contracted the disease.
+_The US and China_ are the leading countries both in terms of the _amount of cases and deaths_, and European countries, notably _France and Italy_, rank highest in terms of _the percentage_ of the population who contracted the disease.
 
 The correlation between _the stringency index_ and _the percentage of the population affected_ is rather inconclusive, with China ranking the highest both in terms of stringency and efficiency of the measures taken.
