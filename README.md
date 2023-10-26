@@ -10,10 +10,8 @@
 ## Navigation
 
 - [Overview](#overview)
-- [Statistics](#statistics)
-- []()
-- []()
-- []()
+- [Visualizations](#Visualizations)
+- [Conclusion](#Conclusion)
 
 ## Overview
 
@@ -28,84 +26,44 @@
 - [**COVID-19 Dataset**](https://github.com/owid/covid-19-data) provided by "Our World in Data".
 - **Analyzed timeframe**: 01.03.2020 - 24.09.2023.
 
-## Statistics
+## Visualizations
+
+> #### **All of the visualizations are available in interactive mode and high resolution at my [*"Tableau Public" Portfolio*](https://public.tableau.com/app/profile/aliaksei.vishniavetski/viz/COVID19DataAnalysis_16981729659990/Dashboard1#1)**
+
+### Scale: Main Worldwide numbers
 
 ![global numbers](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/a24414b0-0745-4819-a94a-405485091bb2)
 
-![Cases](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/2b195af6-bd92-4862-8512-b0e16534fa42)
-
-![Deaths](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/d410aa1e-9906-4c30-bde4-420b6aeab2fd)
-![Deaths](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/c0e7b2dc-4314-41c0-8559-bb7832c2bae3)
-
-![map](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/9c463aba-343d-4fea-9538-4e01800c94ae)
+### Scale: Growth of the total number of cases in 6 selected European countries as a percentage of the total population
+> As an example of the general dynamic.
 
 ![perc_pop](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/de5368bd-df14-47ff-9856-6776d7576d8f)
 
-![index](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/288716ae-aafa-4ddf-9b71-16ced3dd36e9)
+
+### Most affected: 20 countries with the most *Cases* of COVID-19
+![Cases](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/2b195af6-bd92-4862-8512-b0e16534fa42)
 
 
+### Most affected: 20 countries with the most *Deaths* from COVID-19
+![Deaths](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/d410aa1e-9906-4c30-bde4-420b6aeab2fd)
 
 
+### Most affected: World map
+> ### The interactive version of the map is available [*here*](https://public.tableau.com/app/profile/aliaksei.vishniavetski/viz/COVID19DataAnalysis_16981729659990/Dashboard1#1)
+> Gradient colormap is used to represent how much countries have been affected in relation to each other. The more red - the bigger portion of the total population had/has COVID-19.
+
+![map](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/9c463aba-343d-4fea-9538-4e01800c94ae)
 
 
+### Insights: Correlation between the stringency of the anti-COVID-19 policies (Stringency Index) and the percentage of people who have contracted COVID-19
+> The most notable data point is China. The most strict anti-COVID measures in the world have also allowed China to have a low sick percentage.
 
+![index](https://github.com/a-vishniavetski/SQL-Tableau-COVID-analysis/assets/132013288/d7f9a0c8-e306-458c-9c00-6a391423c582)
 
+## Conclusion
 
+The pandemic has _770 million_ people affected, with _0.9%_ mortality, and necessitated _70%_ of the World's population to vaccinate themselves.
 
+_The US and China_ are the leading countries both in terms of the _amount of cases and deaths_ and European countries, notably _France and Italy_, rank highest in terms of _the percentage_ of the population who contracted the disease.
 
-
-
-
-
-
-
-  
-## Usage 
-The file `data_exploration.sql` contains the SQL queries for:
-- Data Exploration
-- Normalizing some of the statistics(mainly indexes related to country's living conditions)
-- Creation of *views* , which can be used as a data source for vizualizing with your preferred method (Tableau, PowerBI, Python, etc...).
-
-Example queries:
-- Normalizing the `human_development_index`, `handwashing_facilities` and `stringency_index`. Combining them into a single `combined_index`.
-  
-  ```sql
-  SELECT location
-  	,(max(total_cases) / max(population) * 100.0) AS sick_percentage_total
-  	,avg(normalized_stringency) AS avg_stringency
-  	,avg(normalized_handwash) AS avg_handwash
-  	,avg(normalized_hdi) AS avg_hdi
-  	,((avg(normalized_handwash) + avg(normalized_stringency) + avg(normalized_hdi)) / 3) AS combined_index
-  FROM (
-  	SELECT location
-  		,DATE
-  		,total_cases
-  		,population
-  		,(stringency_index - min_str) / (max_str - min_str) AS normalized_stringency
-  		,(handwashing_facilities - min_hand) / (max_hand - min_hand) AS normalized_handwash
-  		,(human_development_index - min_hdi) / (max_hdi - min_hdi) AS normalized_hdi
-  	FROM covidata
-  	CROSS JOIN (
-  		SELECT min(stringency_index) AS min_str
-  			,max(stringency_index) AS max_str
-  			,min(handwashing_facilities) AS min_hand
-  			,max(handwashing_facilities) AS max_hand
-  			,min(human_development_index) AS min_hdi
-  			,max(human_development_index) AS max_hdi
-  		FROM covidata
-  		) AS minmax
-  	) AS norm
-  GROUP BY location;
-  ```
-
-- Absolute cumulative excess mortality and total deaths
-  ```sql
-  SELECT location
-  	,DATE
-  	,total_deaths
-  	,avg(excess_mortality_cumulative_absolute) OVER (
-  		PARTITION BY location ORDER BY DATE rows BETWEEN 10 preceding
-  				AND 10 following
-  		) AS excess_mort_cumul_abs
-  FROM covidata;
-  ```
+The correlation between _the stringency index_ and _the percentage of the population affected_ is rather inconclusive, with China ranking the highest both in terms of stringency and efficiency of the measures taken.
